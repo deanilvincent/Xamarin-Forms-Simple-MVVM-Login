@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SimpleLoginMvvm"
+             x:Class="SimpleLoginMvvm.MainPage"
+             xmlns:vm="clr-namespace:SimpleLoginMvvm.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="15">
+        <Entry Text="{Binding UserAccounts.Username, Mode=TwoWay}"
+               Placeholder="Username"/>
+        <Entry Text="{Binding UserAccounts.Password, Mode=TwoWay}"
+               Placeholder="Password"
+               IsPassword="True"/>
+        <Button Text="Login"
+                Command="{Binding LoginCommand}"/>
+    </StackLayout>
+</ContentPage>
